@@ -59,8 +59,8 @@ class Rider implements Runnable{
         if (busStop.riders.size()==0 || busStop.bus.riders.size() >= busStop.bus.MAX_CAPACITY) {
             Semaphores.allBoarded.release();
         } else {
-			Semaphores.busArrived.release();
-		}
+	    Semaphores.busArrived.release();
+	}
 
     }
 
@@ -94,8 +94,8 @@ class Bus {
         if (busstop.riders.size() > 0){
             Semaphores.allBoarded.acquire();
         } else {
-			Semaphores.busArrived.acquire();
-		}
+	    Semaphores.busArrived.acquire();
+	}
         busStop.bus = null;
         System.out.println("bus left the bus stop");
         busstop = null;
